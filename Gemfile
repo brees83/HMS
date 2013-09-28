@@ -15,7 +15,10 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'activeadmin'
   gem "meta_search",    '>= 1.1.0.pre'
-   
+  gem 'jquery-ui-rails'
+  gem 'twitter-bootstrap-rails'
+  gem "therubyracer"
+  gem "less-rails"
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby

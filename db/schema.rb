@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130922212500) do
+ActiveRecord::Schema.define(:version => 20130926185919) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -63,6 +63,58 @@ ActiveRecord::Schema.define(:version => 20130922212500) do
     t.boolean  "active"
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+    t.time     "Timezone"
   end
+
+  create_table "preferences", :force => true do |t|
+    t.boolean  "voice"
+    t.boolean  "text"
+    t.boolean  "email"
+    t.string   "msg_pref"
+    t.datetime "created_at",                                                       :null => false
+    t.datetime "updated_at",                                                       :null => false
+    t.integer  "customer_profile_id"
+    t.string   "timezone"
+    t.boolean  "holiday_new_year",              :default => true
+    t.boolean  "holiday_martin_luther_king_jr", :default => true
+    t.boolean  "holiday_presidents",            :default => true
+    t.boolean  "holiday_memorial",              :default => true
+    t.boolean  "holiday_independence",          :default => true
+    t.boolean  "holiday_labor",                 :default => true
+    t.boolean  "holiday_columbus",              :default => true
+    t.boolean  "holiday_veterans",              :default => true
+    t.boolean  "holiday_thanksgiving",          :default => true
+    t.boolean  "holiday_christmas",             :default => true
+    t.date     "added_holiday_1"
+    t.date     "added_holiday_2"
+    t.date     "added_holiday_3"
+    t.date     "added_holiday_4"
+    t.date     "added_holiday_5"
+    t.date     "added_holiday_6"
+    t.date     "added_holiday_7"
+    t.boolean  "sunday_send",                   :default => true
+    t.time     "sunday_start",                  :default => '2000-01-01 10:00:00'
+    t.time     "sunday_end",                    :default => '2000-01-01 18:00:00'
+    t.boolean  "monday_send",                   :default => true
+    t.time     "monday_start",                  :default => '2000-01-01 09:00:00'
+    t.time     "monday_end",                    :default => '2000-01-01 20:00:00'
+    t.boolean  "tuesday_send",                  :default => true
+    t.time     "tuesday_start",                 :default => '2000-01-01 09:00:00'
+    t.time     "tuesday_end",                   :default => '2000-01-01 20:00:00'
+    t.boolean  "wednesday_send",                :default => true
+    t.time     "wednesday_start",               :default => '2000-01-01 09:00:00'
+    t.time     "wednesday_end",                 :default => '2000-01-01 20:00:00'
+    t.boolean  "thursday_send",                 :default => true
+    t.time     "thursday_start",                :default => '2000-01-01 09:00:00'
+    t.time     "thursday_end",                  :default => '2000-01-01 20:00:00'
+    t.boolean  "friday_send",                   :default => true
+    t.time     "friday_start",                  :default => '2000-01-01 09:00:00'
+    t.time     "friday_end",                    :default => '2000-01-01 20:00:00'
+    t.boolean  "saturday_send",                 :default => true
+    t.time     "saturday_start",                :default => '2000-01-01 10:00:00'
+    t.time     "saturday_end",                  :default => '2000-01-01 18:00:00'
+  end
+
+  add_index "preferences", ["customer_profile_id"], :name => "index_preferences_on_customer_profile_id"
 
 end

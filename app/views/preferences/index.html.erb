@@ -1,0 +1,37 @@
+<h1><b>Settings</b></h1>
+<br>
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="Controls"><h5>Controls</h5></a>
+  </li>
+  <li><a href="Message Times & Dates"><h5>Message Times & Dates</h5></a></li>
+  <li><a href="manage_users"><h5>Manage Users</h5></a></li>
+  <li><a href="Staff Notifications"><h5>Staff Notifications</h5></a></li>
+</ul>
+<table>
+  <tr>
+    <th>Voice</th>
+    <th>Text</th>
+    <th>Email</th>
+    <th>Messaging Preferences</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @preferences.each do |preference| %>
+  <tr>
+    <td><%= preference.voice %></td>
+    <td><%= preference.text %></td>
+    <td><%= preference.email %></td>
+    <td><%= preference.msg_pref %></td>
+    <td><%= link_to 'Show', preference %></td>
+    <td><%= link_to 'Edit', edit_preference_path(preference) %></td>
+    <td><%= link_to 'Delete', preference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Preference', new_preference_path %>

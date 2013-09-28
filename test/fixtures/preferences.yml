@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  voice: false
+  text: false
+  email: false
+  msg_pref: MyString
+
+two:
+  voice: false
+  text: false
+  email: false
+  msg_pref: MyString

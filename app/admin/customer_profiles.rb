@@ -9,6 +9,8 @@ index do
   column :state, :sortable => :state
   column :start_date, :sortable => :start_date
   column :renewal_date, :sortable => :renewal_date
-  default_actions
+ # column :timezone 
+#    time_zone_select customer_profile.timezone
+  
   end
 end

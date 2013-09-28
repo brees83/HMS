@@ -1,6 +1,16 @@
 HMS3::Application.routes.draw do
+  get "pages/send_times"
+
+  get "pages/controls"
+
+  resources :preferences
+
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  
+  match '/manage_users' => 'pages#manage_users'
+  get "pages/staff_notifications"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
